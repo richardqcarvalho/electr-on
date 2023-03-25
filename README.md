@@ -1,6 +1,6 @@
 # Electr-On
 
-This project was made to provide a minimal structure with some tools that allows us to build a project using Electron, React and Typescript.
+This project was made to provide a minimal structure with some tools that allows us to work on a project using Electron, React and Typescript.
 
 ![image](https://img.shields.io/badge/status-under%20development-yellow)
 

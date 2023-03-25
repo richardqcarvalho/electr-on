@@ -1,0 +1,7 @@
+node_modules
+*.lock
+watch
+next-env.d.ts
+.next
+src/assets
+src/main/utils.ts

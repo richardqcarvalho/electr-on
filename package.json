@@ -1,0 +1,29 @@
+{
+  "name": "electron-tests",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^13.2.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.9"
+  },
+  "devDependencies": {
+    "@types/electron": "^1.6.10",
+    "@types/node": "^18.15.5",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "chokidar": "^3.5.3",
+    "concurrently": "^7.6.0",
+    "electron": "^23.2.0",
+    "prettier": "^2.8.6",
+    "typescript": "^5.0.2",
+    "wait-on": "^7.0.1"
+  },
+  "scripts": {
+    "dev": "concurrently --kill-others \"yarn next dev\" \"yarn ts\" \"yarn electron\"",
+    "ts": "tsc -w",
+    "electron": "wait-on http://localhost:3000 && electron ./watch"
+  },
+  "type": "commonjs"
+}

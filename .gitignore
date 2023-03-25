@@ -3,4 +3,3 @@ node_modules
 watch
 next-env.d.ts
 .next
-src/assets

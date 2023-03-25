@@ -9,7 +9,7 @@ export default (glob: string | string[]) => {
     const executablePath = resolve(dirname, "node_modules", "electron");
 
     const child = spawn(require(executablePath), [app.getAppPath()], {
-      // detached: true,
+      detached: true,
       stdio: "inherit",
     });
 

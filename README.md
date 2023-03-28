@@ -28,3 +28,4 @@ This project was made to provide a minimal structure with some tools that allows
 - [x] Make a function that find the right monitor to show the windows when in development mode
 - [ ] Configure the build process to use the best configure to do that in Electron and Next together
 - [ ] Check the possibility to configure Typescript to emit less files inside watch directory during the development
+- [ ] Provide output files for MacOS and Linux as well (development's been doing on Windows)

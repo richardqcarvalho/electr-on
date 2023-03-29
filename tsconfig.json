@@ -5,7 +5,6 @@
     "moduleResolution": "node",
     "target": "esnext",
     "module": "commonjs",
-    "rootDir": "./src/main/",
     "outDir": "./watch",
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": true,
@@ -17,7 +16,6 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "skipDefaultLibCheck": true,
-    "skipLibCheck": true,
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "strict": false,
@@ -25,8 +23,8 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": false
+    "noEmit": false,
+    "types": ["vite/client"]
   },
-  "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+  "include": ["src/main/*"]
 }

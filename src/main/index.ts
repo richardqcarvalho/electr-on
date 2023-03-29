@@ -26,7 +26,7 @@ app.whenReady().then(() => {
   ]);
   tray.setContextMenu(contextMenu);
 
-  window.loadURL("http://localhost:3000").then(() => {
+  window.loadURL("http://localhost:5173").then(() => {
     window.show();
   });
 });

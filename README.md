@@ -13,14 +13,14 @@ This project was made to provide a minimal structure with some tools that allows
 
 ## Libs used
 
-- [React](https://react.dev/)
-- [Next.js](https://nextjs.org/)
-- [Typescript](https://www.typescriptlang.org/)
-- [Electron](https://www.electronjs.org/)
+- [React](https://react.dev)
+- [Vite](https://vitejs.dev)
+- [Typescript](https://typescriptlang.org)
+- [Electron](https://electronjs.org)
 - [Wait-on](https://github.com/jeffbski/wait-on)
 - [Concurrently](https://github.com/open-cli-tools/concurrently)
 - [Chokidar](https://github.com/paulmillr/chokidar)
-- [Prettier](https://prettier.io/)
+- [Prettier](https://prettier.io)
 
 ## Project goals
 

@@ -11,16 +11,17 @@ app.whenReady().then(() => {
   const windowWidth = 1000;
   const windowHeight = 500;
   const bounds = getBounds(windowWidth, windowHeight);
-  const iconPath = resolve(dirname, "src", "assets", "icon.ico");
+  const iconPath = (number: number) =>
+    resolve(dirname, "src", "assets", `icon${number}.ico`);
 
   const window = new BrowserWindow({
     width: windowWidth,
     height: windowHeight,
-    icon: iconPath,
+    icon: iconPath(64),
   });
   window.setBounds(bounds);
 
-  const tray = new Tray(iconPath);
+  const tray = new Tray(iconPath(16));
   const contextMenu = Menu.buildFromTemplate([
     { label: "Close", click: () => app.quit() },
   ]);

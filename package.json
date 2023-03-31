@@ -22,7 +22,7 @@
     "wait-on": "^7.0.1"
   },
   "scripts": {
-    "dev": "concurrently --kill-others \"yarn vite\" \"yarn tsc -w\" \"wait-on tcp:5173 && electron ./watch\""
+    "dev": "tsc && concurrently --kill-others \"yarn vite\" \"yarn tsc -w\" \"wait-on tcp:5173 && electron ./watch\""
   },
   "type": "commonjs"
 }

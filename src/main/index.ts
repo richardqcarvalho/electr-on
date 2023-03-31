@@ -1,18 +1,16 @@
 import { app, BrowserWindow, Menu, Tray } from "electron";
 import { resolve } from "path";
 import reload from "./reload";
-import { getBounds } from "./utils";
-
-const dirname = resolve(app.getAppPath(), "..");
+import { getBounds, _dirname } from "./utils";
 
 app.whenReady().then(() => {
-  reload(resolve(dirname, "watch"));
+  reload(resolve(_dirname, "watch"));
 
   const windowWidth = 1000;
   const windowHeight = 500;
   const bounds = getBounds(windowWidth, windowHeight);
   const iconPath = (number: number) =>
-    resolve(dirname, "src", "assets", `icon${number}.ico`);
+    resolve(_dirname, "src", "assets", `icon${number}.ico`);
 
   const window = new BrowserWindow({
     width: windowWidth,
@@ -23,7 +21,10 @@ app.whenReady().then(() => {
 
   const tray = new Tray(iconPath(16));
   const contextMenu = Menu.buildFromTemplate([
-    { label: "Close", click: () => app.quit() },
+    {
+      label: "Close",
+      click: () => app.quit(),
+    },
   ]);
   tray.setContextMenu(contextMenu);
 

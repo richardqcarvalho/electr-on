@@ -1,21 +1,33 @@
 import { app, screen } from "electron";
+import { resolve } from "path";
 
-export const getBounds = (windowWidth: number, windowHeight: number) => {
-  const isDev = !app.isPackaged;
+export const isDev = !app.isPackaged;
 
-  const display = isDev
-    ? screen.getAllDisplays()[0]
-    : screen.getPrimaryDisplay();
-
+export const getBounds = (
+  windowWidth: number,
+  windowHeight: number,
+  monitor?: number
+) => {
   return isDev
     ? {
-        x: display.workArea.x + (display.workArea.width - windowWidth) / 2,
-        y: display.workArea.y + (display.workArea.height - windowHeight) / 2,
+        x:
+          screen.getAllDisplays()[monitor || 0].workArea.x +
+          (screen.getAllDisplays()[monitor || 0].workArea.width - windowWidth) /
+            2,
+        y:
+          screen.getAllDisplays()[monitor || 0].workArea.y +
+          (screen.getAllDisplays()[monitor || 0].workArea.height -
+            windowHeight) /
+            2,
       }
     : {
-        x: display.workArea.width - (display.workArea.width + windowWidth) / 2,
+        x:
+          screen.getPrimaryDisplay().workArea.width -
+          (screen.getPrimaryDisplay().workArea.width + windowWidth) / 2,
         y:
-          display.workArea.height -
-          (display.workArea.height + windowHeight) / 2,
+          screen.getPrimaryDisplay().workArea.height -
+          (screen.getPrimaryDisplay().workArea.height + windowHeight) / 2,
       };
 };
+
+export const _dirname = resolve(app.getAppPath(), "..");

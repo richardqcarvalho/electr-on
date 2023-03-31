@@ -1,16 +1,16 @@
 import { app, BrowserWindow, Menu, Tray } from 'electron'
 import { resolve } from 'path'
 import reload from './reload'
-import { getBounds, _dirname } from './utils'
+import { getBounds, __dirname } from './utils'
 
 app.whenReady().then(() => {
-	reload(resolve(_dirname, 'watch'))
+	reload(resolve(__dirname, 'watch'))
 
 	const windowWidth = 1000
 	const windowHeight = 500
 	const bounds = getBounds(windowWidth, windowHeight)
 	const iconPath = (number: number) =>
-		resolve(_dirname, 'src', 'assets', `icon${number}.ico`)
+		resolve(__dirname, 'src', 'assets', `icon${number}.ico`)
 
 	const window = new BrowserWindow({
 		width: windowWidth,

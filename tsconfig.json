@@ -19,13 +19,11 @@
 		"lib": ["dom", "dom.iterable", "esnext"],
 		"allowJs": true,
 		"strict": false,
-		"incremental": true,
 		"esModuleInterop": true,
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"noEmit": false,
-		"types": ["vite/client"],
-		"tsBuildInfoFile": "./.tsbuildinfo"
+		"types": ["vite/client"]
 	},
 	"include": ["src/main/*"]
 }

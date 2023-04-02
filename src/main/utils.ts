@@ -30,4 +30,4 @@ export const getBounds = (
 		  }
 }
 
-export const __dirname = resolve(app.getAppPath(), '..')
+export const dirPath = resolve(app.getAppPath(), '..')

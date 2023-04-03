@@ -1,9 +1,10 @@
 import { app, screen } from 'electron'
+import os from 'os'
 import { resolve } from 'path'
 
 export const isDev = !app.isPackaged
 
-export const getBounds = (
+export const getWindowConfig = (
 	windowWidth: number,
 	windowHeight: number,
 	monitor?: number,
@@ -19,6 +20,8 @@ export const getBounds = (
 					(screen.getAllDisplays()[monitor || 0].workArea.height -
 						windowHeight) /
 						2,
+				width: windowWidth,
+				height: windowHeight,
 		  }
 		: {
 				x:
@@ -27,7 +30,12 @@ export const getBounds = (
 				y:
 					screen.getPrimaryDisplay().workArea.height -
 					(screen.getPrimaryDisplay().workArea.height + windowHeight) / 2,
+				width: windowWidth,
+				height: windowHeight,
 		  }
 }
 
 export const dirPath = resolve(app.getAppPath(), '..')
+
+export const getPlatformParams: [string, number, boolean] =
+	os.platform() == 'win32' ? ['ico', 16, false] : ['png', 32, true]

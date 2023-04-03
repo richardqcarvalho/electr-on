@@ -1,32 +1,30 @@
 import { app, BrowserWindow, Menu, Tray } from 'electron'
 import { resolve } from 'path'
 import reload from './reload'
-import { dirPath, getBounds } from './utils'
+import { dirPath, getPlatformParams, getWindowConfig } from './utils'
 
 app.whenReady().then(() => {
 	reload(resolve(dirPath, 'watch'))
 
-	const windowWidth = 1000
-	const windowHeight = 500
-	const bounds = getBounds(windowWidth, windowHeight)
+	const [ext, traySize, showOpenOpt] = getPlatformParams
 	const iconPath = (number: number) =>
-		resolve(dirPath, 'src', 'assets', `icon${number}.ico`)
-
+		resolve(dirPath, 'src', 'assets', `icon${number}.${ext}`)
+	const windowConfig = getWindowConfig(1000, 500)
 	const window = new BrowserWindow({
-		width: windowWidth,
-		height: windowHeight,
 		icon: iconPath(64),
+		...windowConfig,
 	})
-	window.setBounds(bounds)
 
-	const tray = new Tray(iconPath(16))
-	const contextMenu = Menu.buildFromTemplate([
+	const tray = new Tray(iconPath(traySize))
+	const menuTemplate = [
 		{
 			label: 'Close',
 			click: () => app.quit(),
 		},
-	])
-	tray.setContextMenu(contextMenu)
+	]
+	if (showOpenOpt)
+		menuTemplate.splice(0, 0, { label: 'Open', click: () => window.show() })
+	tray.setContextMenu(Menu.buildFromTemplate(menuTemplate))
 
 	window.loadURL('http://localhost:5173').then(() => {
 		window.show()

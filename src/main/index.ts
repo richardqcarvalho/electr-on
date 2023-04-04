@@ -1,3 +1,4 @@
+import { spawn } from 'child_process'
 import { app, BrowserWindow, Menu, Tray } from 'electron'
 import { resolve } from 'path'
 import reload from './reload'
@@ -17,6 +18,19 @@ app.whenReady().then(() => {
 
 	const tray = new Tray(iconPath(traySize))
 	const menuTemplate = [
+		{
+			label: 'Reload',
+			click: () => {
+				console.log(process.env.SHELL)
+				const child = spawn('yarn', ['dev:electron'], {
+					detached: true,
+					stdio: 'inherit',
+					shell: process.env.SHELL,
+				})
+				child.unref()
+				app.quit()
+			},
+		},
 		{
 			label: 'Close',
 			click: () => app.quit(),

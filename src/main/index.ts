@@ -1,16 +1,15 @@
-import { spawn } from 'child_process'
 import { app, BrowserWindow, Menu, Tray } from 'electron'
 import { resolve } from 'path'
 import reload from './reload'
 import { dirPath, getPlatformParams, getWindowConfig } from './utils'
 
 app.whenReady().then(() => {
-	reload(resolve(dirPath, 'watch'))
+	setTimeout(() => reload(resolve(dirPath, 'watch')), 5000)
 
 	const [ext, traySize, showOpenOpt] = getPlatformParams
 	const iconPath = (number: number) =>
 		resolve(dirPath, 'src', 'assets', `icon${number}.${ext}`)
-	const windowConfig = getWindowConfig(1000, 500)
+	const windowConfig = getWindowConfig(500, 500)
 	const window = new BrowserWindow({
 		icon: iconPath(64),
 		...windowConfig,
@@ -18,19 +17,6 @@ app.whenReady().then(() => {
 
 	const tray = new Tray(iconPath(traySize))
 	const menuTemplate = [
-		{
-			label: 'Reload',
-			click: () => {
-				console.log(process.env.SHELL)
-				const child = spawn('yarn', ['dev:electron'], {
-					detached: true,
-					stdio: 'inherit',
-					shell: process.env.SHELL,
-				})
-				child.unref()
-				app.quit()
-			},
-		},
 		{
 			label: 'Close',
 			click: () => app.quit(),

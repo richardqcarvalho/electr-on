@@ -22,9 +22,9 @@
 		"wait-on": "^7.0.1"
 	},
 	"scripts": {
-		"dev": "tsc && concurrently -k -n vite,ts,electron \"yarn vite\" \"yarn dev:typescript\" \"yarn dev:electron\"",
+		"dev": "concurrently -k -n ts,vite,electron \"yarn dev:typescript\" \"yarn vite\" \"yarn dev:electron\"",
 		"dev:typescript": "tsc -w",
-		"dev:electron": "wait-on tcp:5173 && electron ./watch"
+		"dev:electron": "wait-on watch/ && wait-on tcp:5173 && electron ./watch"
 	},
 	"type": "commonjs"
 }

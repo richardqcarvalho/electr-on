@@ -37,5 +37,5 @@ export const getWindowConfig = (
 
 export const dirPath = resolve(app.getAppPath(), '..')
 
-export const getPlatformParams: [string, number, boolean] =
-	os.platform() == 'win32' ? ['ico', 16, false] : ['png', 32, true]
+export const getPlatformParams: [string, number, boolean, string] =
+	os.platform() == 'win32' ? ['ico', 16, false, '\\'] : ['png', 32, true, '/']

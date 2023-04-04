@@ -25,5 +25,6 @@
 		"noEmit": false,
 		"types": ["vite/client"]
 	},
-	"include": ["src/main/*"]
+	"include": ["src/main/*"],
+	"exclude": ["vite.config.js"]
 }

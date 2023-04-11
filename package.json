@@ -5,19 +5,19 @@
 	"dependencies": {
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
-		"react-router-dom": "^6.9.0"
+		"react-router-dom": "^6.10.0"
 	},
 	"devDependencies": {
 		"@types/electron": "^1.6.10",
-		"@types/node": "^18.15.5",
-		"@types/react": "^18.0.28",
+		"@types/node": "^18.15.11",
+		"@types/react": "^18.0.34",
 		"@types/react-dom": "^18.0.11",
 		"@vitejs/plugin-react": "^3.1.0",
 		"chokidar": "^3.5.3",
-		"concurrently": "^7.6.0",
-		"electron": "^23.2.0",
-		"prettier": "^2.8.6",
-		"typescript": "^5.0.2",
+		"concurrently": "^8.0.1",
+		"electron": "^24.1.0",
+		"prettier": "^2.8.7",
+		"typescript": "^5.0.4",
 		"vite": "^4.2.1",
 		"wait-on": "^7.0.1"
 	},

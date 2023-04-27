@@ -2,3 +2,4 @@ node_modules
 *.lock
 watch
 update.js
+*lock.json

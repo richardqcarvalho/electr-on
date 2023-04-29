@@ -1,29 +1,25 @@
 {
 	"compilerOptions": {
-		"allowSyntheticDefaultImports": true,
-		"jsx": "preserve",
-		"moduleResolution": "node",
 		"target": "esnext",
 		"module": "commonjs",
-		"outDir": "./watch",
-		"forceConsistentCasingInFileNames": true,
-		"noImplicitAny": true,
-		"strictFunctionTypes": true,
-		"noImplicitThis": true,
-		"useUnknownInCatchVariables": true,
-		"noUnusedLocals": true,
-		"noUnusedParameters": true,
-		"noImplicitReturns": true,
-		"noFallthroughCasesInSwitch": true,
-		"skipDefaultLibCheck": true,
+		"moduleResolution": "node",
+		"strict": false,
+		"skipLibCheck": true,
+		"esModuleInterop": true,
+		"jsx": "preserve",
 		"lib": ["dom", "dom.iterable", "esnext"],
 		"allowJs": true,
-		"strict": false,
-		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"noEmit": true,
+		"incremental": true,
 		"resolveJsonModule": true,
 		"isolatedModules": true,
-		"noEmit": false,
-		"types": ["vite/client"]
+		"plugins": [
+			{
+				"name": "next"
+			}
+		]
 	},
-	"include": ["src/main/*"]
+	"include": ["app", "main", ".next/types/**/*.ts"],
+	"exclude": ["node_modules"]
 }

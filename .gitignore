@@ -3,3 +3,6 @@ node_modules
 watch
 update.js
 *lock.json
+next-env.d.ts
+.next
+.vscode

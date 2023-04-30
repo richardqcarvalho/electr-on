@@ -20,9 +20,9 @@
 		"wait-on": "^7.0.1"
 	},
 	"scripts": {
-		"dev": "concurrently -k -n ts,next,electron \"yarn dev:typescript\" \"yarn dev:next\" \"yarn dev:electron\"",
+		"dev": "node scripts/dev",
 		"dev:typescript": "tsc -w",
-		"dev:electron": "wait-on tcp:3000 && electron .",
+		"dev:electron": "wait-on tcp:3000 && electron watch",
 		"dev:next": "next dev"
 	},
 	"type": "commonjs"

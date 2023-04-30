@@ -18,8 +18,9 @@
 			{
 				"name": "next"
 			}
-		]
+		],
+		"outDir": "watch"
 	},
-	"include": ["app", "main", ".next/types/**/*.ts"],
-	"exclude": ["node_modules"]
+	"include": ["main", ".next/types/**/*.ts"],
+	"exclude": ["node_modules", "app"]
 }

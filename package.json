@@ -1,29 +1,29 @@
 {
-	"name": "electr-on",
-	"version": "1.0.0",
-	"license": "MIT",
-	"dependencies": {
-		"next": "^13.3.1",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0",
-		"react-router-dom": "^6.10.0"
-	},
-	"devDependencies": {
-		"@types/node": "^18.15.11",
-		"@types/react": "^18.0.34",
-		"@types/react-dom": "^18.0.11",
-		"chokidar": "^3.5.3",
-		"concurrently": "^8.0.1",
-		"electron": "^24.1.0",
-		"prettier": "^2.8.7",
-		"typescript": "^5.0.4",
-		"wait-on": "^7.0.1"
-	},
-	"scripts": {
-		"dev": "node scripts/dev",
-		"dev:typescript": "tsc -w",
-		"dev:electron": "wait-on tcp:3000 && electron watch",
-		"dev:next": "next dev"
-	},
-	"type": "commonjs"
+  "name": "electr-on",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^13.3.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "@types/react": "^18.0.34",
+    "@types/react-dom": "^18.0.11",
+    "chokidar": "^3.5.3",
+    "concurrently": "^8.0.1",
+    "electron": "^24.1.0",
+    "prettier": "^2.8.7",
+    "typescript": "^5.0.4",
+    "wait-on": "^7.0.1"
+  },
+  "scripts": {
+    "dev": "node scripts/dev",
+    "dev:typescript": "tsc -w",
+    "dev:electron": "wait-on tcp:3000 && electron watch",
+    "dev:next": "next dev"
+  },
+  "type": "commonjs"
 }

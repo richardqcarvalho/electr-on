@@ -6,3 +6,4 @@ update.js
 next-env.d.ts
 .next
 .vscode
+main/*.js

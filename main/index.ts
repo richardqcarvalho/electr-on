@@ -5,7 +5,7 @@ import { dirPath, getPlatformParams, getWindowConfig } from './utils'
 app.whenReady().then(() => {
   const [ext, traySize, showOpenOpt] = getPlatformParams
   const iconPath = (number: number) =>
-    resolve(dirPath, 'src', 'assets', `icon${number}.${ext}`)
+    resolve(dirPath, 'assets', `icon${number}.${ext}`)
   const windowConfig = getWindowConfig(500, 500)
   const window = new BrowserWindow({
     icon: iconPath(64),

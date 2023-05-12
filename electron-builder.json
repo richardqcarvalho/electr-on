@@ -1,0 +1,16 @@
+{
+  "appId": "com.generic.electr-on",
+  "productName": "Electr-On",
+  "files": ["assets", "out", "main/chunks"],
+  "win": {
+    "target": "nsis"
+  },
+  "nsis": {
+    "oneClick": false,
+    "perMachine": true,
+    "allowToChangeInstallationDirectory": true,
+    "uninstallDisplayName": "${productName}",
+    "artifactName": "electr-on-${version}-${arch}.${ext}",
+    "createDesktopShortcut": false
+  }
+}

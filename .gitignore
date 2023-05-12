@@ -6,3 +6,6 @@ update.js
 next-env.d.ts
 .next
 .vscode
+main/chunks
+dist
+out

@@ -1,15 +1,22 @@
-const concurrently = require('concurrently')
+const { concurrently } = require('concurrently')
+const getRunner = require('./runner')
 
-const log = logs => console.log(logs)
+const initiate = () => {
+  const runner = getRunner()
+  const { result } = concurrently(
+    [
+      { command: `${runner} dev:typescript`, name: 'ts' },
+      { command: `${runner} dev:next`, name: 'next' },
+      { command: `${runner} dev:electron`, name: 'electron' },
+    ],
+    {
+      killOthers: 'failure',
+    },
+  )
+  result.then(
+    success => console.log({ success }),
+    failure => console.log({ failure }),
+  )
+}
 
-const { result } = concurrently(
-  [
-    { command: 'npm run dev:typescript', name: 'ts' },
-    { command: 'npm run dev:next', name: 'next' },
-    { command: 'npm run dev:electron', name: 'electron' },
-  ],
-  {
-    killOthers: 'failure',
-  },
-)
-result.then(log, log)
+initiate()

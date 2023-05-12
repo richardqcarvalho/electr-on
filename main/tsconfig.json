@@ -5,6 +5,7 @@
     "moduleResolution": "node",
     "strict": false,
     "skipLibCheck": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "outDir": "chunks"
   }
 }

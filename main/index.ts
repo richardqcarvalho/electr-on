@@ -23,7 +23,11 @@ app.whenReady().then(() => {
     menuTemplate.splice(0, 0, { label: 'Open', click: () => window.show() })
   tray.setContextMenu(Menu.buildFromTemplate(menuTemplate))
 
-  window.loadURL('http://localhost:3000').then(() => {
-    window.show()
-  })
+  window
+    .loadURL(
+      app.isPackaged ? 'file://./out/index.html' : 'http://localhost:3000',
+    )
+    .then(() => {
+      window.show()
+    })
 })
